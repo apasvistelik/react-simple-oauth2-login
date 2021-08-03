@@ -28,6 +28,7 @@ class OAuth2Login extends Component {
       buttonText,
       authorizationUrl,
       clientId,
+      extra,
       scope,
       redirectUri,
       state,
@@ -41,6 +42,7 @@ class OAuth2Login extends Component {
       scope,
       redirect_uri: redirectUri,
       response_type: responseType,
+      ...(extra || {})
     };
     if (state) {
       payload.state = state;
